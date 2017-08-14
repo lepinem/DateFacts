@@ -2,6 +2,8 @@
 
 
 const moment = require('moment');
+const chalk = require ('chalk');
+
 
 var seconds = moment().seconds();
 var minutes = moment().minutes();
@@ -29,8 +31,8 @@ const leap = function leap() {
 }
 
 
-console.log("It is " + moment().format("dddd LL LTS") + ".");
-console.log("It is the " + moment().dayOfYear() + "th day of the year.");
-console.log("It is " + secondsOfDay() + " seconds into the day.");
-console.log("It " + response() + " during Daylight Savings Time.");
-console.log("It" + leap() + " a leap year.");
+console.log("It is " + chalk.blue.bold(moment().format("dddd LL LTS")) + ".");
+console.log("It is the " + chalk.magenta.bold(moment().dayOfYear()) + chalk.magenta.bold("th") + " day of the year.");
+console.log("It is " + chalk.cyan.bold(secondsOfDay()) + " seconds into the day.");
+console.log("It " + chalk.green.bold(response()) + " during Daylight Savings Time.");
+console.log("It" + chalk.red.bold(leap()) + " a leap year.");
